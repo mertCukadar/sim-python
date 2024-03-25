@@ -11,6 +11,6 @@ class Hunter(Prey):
         self.is_collide = False
         
     def collision_to_prey(self, prey):
-        return self.rect.colliderect(prey.rect)
+        return self.rect.collidetect(prey.rect)
     
     
