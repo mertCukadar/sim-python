@@ -54,16 +54,14 @@ class Map:
                         if prey != other_prey and prey.collision_neihbor(other_prey):
                             prey.is_collide = True
                             break
-                            
-
-                    if prey.is_alive == False and prey.is_collide:
+                    if not prey.is_alive and prey.is_collide:
                         self.preys.remove(prey)
                         print("Prey is dead")
                         self.preys.append(Prey(random.randint(0, 800), random.randint(0, 800)))
                         self.preys.append(Prey(random.randint(0, 800), random.randint(0, 800)))
 
                         print("New Prey is born")
-                    elif prey.is_alive == False and not prey.is_collide:
+                    elif not prey.is_alive and not prey.is_collide:
                         self.preys.remove(prey)
                         print("Prey is dead alone")
                     else:
