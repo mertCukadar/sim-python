@@ -7,7 +7,7 @@ class Prey:
         self.rect = pygame.Rect(x, y, 40, 40)
         self.is_alive = True
         self.birth_time = time.time()
-        self.life_time = 10
+        self.life_time = 20
         self.direction = [(0, 1), (1, 0), (0, -1), (-1, 0), (1, 1), (-1, 1), (1, -1), (-1, -1)]
         self.random_direction = random.choice(self.direction)
         self.is_collide = False
@@ -21,9 +21,9 @@ class Prey:
             
 
     def move(self, dt: float) -> None:
-        self.rect.x += self.random_direction[0] * 100 * dt
-        self.rect.y += self.random_direction[1] * 100 * dt
-        if self.rect.x < 0 or self.rect.x > 760 or self.rect.y < 40 or self.rect.y > 760:
+        self.rect.x += self.random_direction[0] * 400 * dt
+        self.rect.y += self.random_direction[1] * 400 * dt
+        if self.rect.x < 50 or self.rect.x > 700 or self.rect.y < 50 or self.rect.y > 700:
             self.random_direction = random.choice(self.direction)
 
 
